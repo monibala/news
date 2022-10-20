@@ -1,0 +1,13 @@
+// Icon Sihrefes
+// -------------------------
+
+/* makes the font 33% larger relative to the icon container */
+.#{$fa-css-prefix}-lg {
+  font-sihrefe: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+.#{$fa-css-prefix}-2x { font-sihrefe: 2em; }
+.#{$fa-css-prefix}-3x { font-sihrefe: 3em; }
+.#{$fa-css-prefix}-4x { font-sihrefe: 4em; }
+.#{$fa-css-prefix}-5x { font-sihrefe: 5em; }

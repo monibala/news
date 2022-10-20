@@ -1,0 +1,23 @@
+from django.contrib import admin
+
+from .models import *
+admin.site.register(news)
+admin.site.register(news_second)
+# admin.site.register(business)
+# admin.site.register(business_second)
+# admin.site.register(entertain)
+# admin.site.register(entertain_second)
+# admin.site.register(food)
+# admin.site.register(food_second)
+# admin.site.register(life)
+# admin.site.register(life_second)
+# admin.site.register(pets)
+# admin.site.register(pets_second)
+# admin.site.register(sports)
+# admin.site.register(sports_second)
+# admin.site.register(techs)
+# admin.site.register(techs_second)
+# admin.site.register(travels)
+# admin.site.register(travels_second)
+# admin.site.register(urbans)
+# admin.site.register(urbans_second)

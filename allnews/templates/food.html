@@ -1,0 +1,413 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<br>
+<br>
+
+<br>
+
+<br>
+
+<br>
+<br>
+<br>
+
+<br>
+
+
+
+<section id="bt_section631f75bb6cb81"  class="boldSection topMediumSpaced bottomMediumSpaced gutter boxed inherit" >
+	<div class="port">
+		<div class="boldCell">
+		<div class="boldCellInner">
+			<div class="boldRow " >
+				<div class="boldRowInner">
+					<div class="rowItem col-md-8 col-ms-12 btTextLeft btTopVertical"  data-width="8">
+						<div class="rowItemContent" >
+							<div class="btCategoryTitle btIcoBigSihrefeIcon ">
+								<!-- <div class="sIcon cat-item-26 ">
+									<span class="btIco btIcoBigSihrefe btIcoFilledType btIconCircleShape">
+										<span  data-ico-es="&#xe9ea;" class="btIcoHolder"></span></span>
+									</div> -->
+	<div class="btCategoryTitleTxt"><h2>Food</h2></div><div class="btCatFilter">
+							<span class="btCatFilterItem" data-slug="hipster"><b>
+								<a href="">Hipster</a>
+							</b></span>
+							<span class="btCatFilterItem" data-slug="photography"><b>
+								<a href="">Photography</a>
+							</b></span>
+							<span class="btCatFilterItem" data-slug="skating"><b>
+								<a href="">Skating</a>
+							</b></span>
+							<span class="btCatFilterItem" data-slug="vlogging"><b>
+								<a href="">Vlogging</a>
+							</b></span></div></div>
+							<div class="btClear btSeparator bottomSmallSpaced noBorder" ><hr>
+							</div></div></div>
+							<div class="rowItem col-md-4 col-ms-12 btTextRight btTopVertical"  data-width="4">
+								<div class="rowItemContent" >
+									<!-- <a href="" class="btBtn btBtn btnFilledStyle btnAlternateColor btnSmall btnNormalWidth btnRightPosition btnNoIcon" ><span class="btnInnerText">VIEW ALL</span></a> -->
+								{% for a in data %}
+								
+								
+<div class="btClear btSeparator topSmallSpaced noBorder" ><hr></div></div></div></div></div><div class=" " ><div class="boldRowInner"><div class="rowItem col-md-4 col-ms-12 btTextLeft"  data-width="4"><div class="rowItemContent" ><div class="btSinglePostTemplate  largeTemplate image btHideBottomData btHideTopData backgroundImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					<div class="btSinglePostBackgroundImage" style="background-image:url(/media/{{a.image}}); "><a href=""></a></div>
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-37">{{a.News_category}}</a><a href="" class="btArticleCategory cat-item-12">{{a.News_subcategory}}</a><a href="" class="btArticleCategory cat-item-26">{{a.head3}}</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">{{a.date}}</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/stoffel.jpeg' %}" srcset='http://1.gravatar.com/avatar/18bf5f60fe665d4856660da61ad37907?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Stoffel Jansen</a>
+					</div>
+		<h4>
+			<a href="">
+				{{a.title}}
+			</a>
+		</h4>
+				<div class="btSinglePostExcerpt">
+{{a.desc}}		
+</div>
+		
+					<!-- <div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">1<span>min</span></span>
+													<span class="btArticleViewsCount">6518</span>
+													
+							</div> -->
+		
+	</div>
+</div>
+{% endfor %}
+ {% comment %} <div class="btClear btSeparator topMediumSpaced noBorder" ><hr>
+	</div></div></div>
+	<div class="rowItem col-md-4 col-ms-12 btTextLeft"  data-width="4">
+	<div class="rowItemContent" >
+		<div class="btSinglePostTemplate  largeTemplate gallery btHideBottomData btHideTopData no-imageImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					
+							
+				<div class="btSinglePostTopMetaData">
+			<div class="">
+
+			</div>
+								<span class="btArticleCategories">
+													<a href="" class="btArticleCategory cat-item-19">Popular</a><a href="" class="btArticleCategory cat-item-24">Tech</a><a href="" class="btArticleCategory cat-item-30">Vlogging</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 7, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/stoffel.jpeg' %}" srcset='http://1.gravatar.com/avatar/18bf5f60fe665d4856660da61ad37907?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Stoffel Jansen</a>
+					</div>
+		<h4>
+			<a href="">
+				3 Futuristic gadgets you can buy
+			</a>
+		</h4>
+				<div class="btSinglePostExcerpt">
+			Capitalihrefe on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with clickthroughs.
+		</div>
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>2</span>
+													<span class="btArticleReadingTime">2<span>min</span></span>
+													<span class="btArticleViewsCount">6576</span>
+													<div class="star-rating"><span style="width:83%"><strong class="rating">83</strong>min100</span></div>
+							</div>
+		
+	</div>
+</div>
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div>
+  <div class="rowItem col-md-4 col-ms-12 btTextLeft"  data-width="4">
+	<div class="rowItemContent" >
+		<div class="btSinglePostTemplate  largeTemplate  btHideBottomData btHideTopData backgroundImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					<div class="btSinglePostBackgroundImage" style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/03/photography03-1024x683.jpg); "><a href=""></a></div>
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-50">Photography</a><a href="" class="btArticleCategory cat-item-19">Popular</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 7, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/joanna.jpeg' %}" srcset='http://1.gravatar.com/avatar/46df469fe889ce5b252c36e57f982f57?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Joanna Taylor</a>
+					</div>
+		<h4>
+			<a href="">
+				Fashion photographers in front of the cameras
+			</a>
+		</h4>
+				<div class="btSinglePostExcerpt">
+			Dynamically innovate resource-leveling customer service for state of the art customer service. Objectively innovate empowered manufactured products.
+		</div>
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">1<span>min</span></span>
+													<span class="btArticleViewsCount">2821</span>
+													
+							</div>
+		
+	</div>
+</div>
+
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div></div></div><div class="boldRow " ><div class="boldRowInner"><div class="rowItem col-md-4 col-ms-12 btTextLeft"  data-width="4"><div class="rowItemContent" ><div class="btSinglePostTemplate  largeTemplate  btHideBottomData btHideTopData no-imageImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-44">Gaming</a><a href="" class="btArticleCategory cat-item-45">Hipster</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 6, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/joanna.jpeg' %}" srcset='http://1.gravatar.com/avatar/46df469fe889ce5b252c36e57f982f57?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Joanna Taylor</a>
+					</div>
+		<h4>
+			<a href="">
+				Talking console creation with the designer
+			</a>
+		</h4>
+				<div class="btSinglePostExcerpt">
+			Credibly pontificate highly efficient manufactured products and enabled data. Dynamically target intellectual capital for customihrefed technologies.
+		</div>
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">2<span>min</span></span>
+													<span class="btArticleViewsCount">2721</span>
+													
+							</div>
+		
+	</div>
+</div>
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-4 col-ms-12 btTextLeft"  data-width="4"><div class="rowItemContent" ><div class="btSinglePostTemplate  largeTemplate gallery btHideBottomData btHideTopData backgroundImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					<div class="btSinglePostBackgroundImage" style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/03/photography02-1024x683.jpg); "><a href=""></a></div>
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-50">Photography</a><a href="" class="btArticleCategory cat-item-26">Urban</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 6, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/joanna.jpeg' %}" srcset='http://1.gravatar.com/avatar/46df469fe889ce5b252c36e57f982f57?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Joanna Taylor</a>
+					</div>
+		<h4>
+			<a href="">
+				Guide to vintage film and cameras
+			</a>
+		</h4>
+				<div class="btSinglePostExcerpt">
+			 Professionally cultivate one-to-one customer service with robust ideas. Globally revolutionihrefe global sources through services.
+		</div>
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">2<span>min</span></span>
+													<span class="btArticleViewsCount">1963</span>
+													
+							</div>
+		
+	</div>
+</div>
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-4 col-ms-12 btTextLeft"  data-width="4"><div class="rowItemContent" ><div class="btSinglePostTemplate  largeTemplate  btHideBottomData btHideTopData no-imageImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-45">Hipster</a><a href="" class="btArticleCategory cat-item-52">Skating</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 6, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/joanna.jpeg' %}" srcset='http://1.gravatar.com/avatar/46df469fe889ce5b252c36e57f982f57?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Joanna Taylor</a>
+					</div>
+		<h4>
+			<a href="">
+				Skater champ won&#8217;t defend gold medal
+			</a>
+		</h4>
+				<div class="btSinglePostExcerpt">
+			Dramatically mesh low-risk high-yield alignments before transparent e-tailers. Appropriately empower leadership skills after business portals.
+		</div>
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">2<span>min</span></span>
+													<span class="btArticleViewsCount">2109</span>
+													
+							</div>
+		
+	</div>
+</div> {% endcomment %}
+
+{% for b in data1 %}
+
+
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div></div></div><div class=" " ><div class="boldRowInner"><div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextLeft"  data-width="3"><div class="rowItemContent" ><div class="btSinglePostTemplate  defaultTemplate image btHideBottomData btHideTopData backgroundImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					<div class="btSinglePostBackgroundImage" style="background-image:url(/media/{{b.image}}); "><a href="{% url 'fooddetail' %}?id={{a.id}}"></a></div>
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-30">{{b.News_category}}</a><a href="" class="btArticleCategory cat-item-31">{{b.News_subcategory}}</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">{{b.date}}</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="/media/{{b.writer_image}}" srcset='http://1.gravatar.com/avatar/41fffffe42402d2c978b2b9203558017?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>{{b.writer_name}}</a>
+					</div>
+		<h4>
+			<a href="{% url 'fooddetail' %}?id={{a.id}}">
+				{{b.title}}
+			</a>
+		</h4>
+					
+		
+					<!-- <div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">1<span>min</span></span>
+													<span class="btArticleViewsCount">1677</span>
+													
+							</div> -->
+		
+	</div>
+</div>
+
+{% endfor %}
+{% comment %} <div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextLeft"  data-width="3"><div class="rowItemContent" ><div class="btSinglePostTemplate  defaultTemplate  btHideBottomData btHideTopData backgroundImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					<div class="btSinglePostBackgroundImage" style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/03/vlogging02-1024x683.jpg); "><a href=""></a></div>
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-45">Hipster</a><a href="" class="btArticleCategory cat-item-30">Vlogging</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 1, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/mike.jpeg' %}" srcset='http://2.gravatar.com/avatar/ef1f2f737b64dffb6136ed943a2fe65b?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Mike Phillips</a>
+					</div>
+		<h4>
+			<a href="">
+				This is how much vloggers get paid
+			</a>
+		</h4>
+					
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">2<span>min</span></span>
+													<span class="btArticleViewsCount">1816</span>
+													
+							</div>
+		
+	</div>
+</div>
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextLeft"  data-width="3"><div class="rowItemContent" ><div class="btSinglePostTemplate  defaultTemplate image btHideBottomData btHideTopData backgroundImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					<div class="btSinglePostBackgroundImage" style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/03/skating01-1024x683.jpg); "><a href=""></a></div>
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-19">Popular</a><a href="" class="btArticleCategory cat-item-52">Skating</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 1, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/shanejpeg.jpeg' %}" srcset='http://1.gravatar.com/avatar/41fffffe42402d2c978b2b9203558017?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Shane Murphy</a>
+					</div>
+		<h4>
+			<a href="">
+				Skateboarding is created by hipsters?
+			</a>
+		</h4>
+					
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">2<span>min</span></span>
+													<span class="btArticleViewsCount">1766</span>
+													
+							</div>
+		
+	</div>
+</div>
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextLeft"  data-width="3"><div class="rowItemContent" ><div class="btSinglePostTemplate  defaultTemplate image btHideBottomData btHideTopData backgroundImagePosition image_sihrefe__medium_large__">
+	
+	<div class="btPostImageHolder">
+					<div class="btSinglePostBackgroundImage" style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/03/photography01-1024x683.jpg); "><a href=""></a></div>
+							
+				<div class="btSinglePostTopMetaData">
+			<div class=""></div>
+												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-50">Photography</a><a href="" class="btArticleCategory cat-item-19">Popular</a></span>
+									</div>
+	</div>
+	<div class="btSinglePostContent">
+			
+		<div class="btSinglePostTopData">
+							<span class="btArticleDate">March 1, 2017</span>
+										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/joanna.jpeg' %}" srcset='http://1.gravatar.com/avatar/46df469fe889ce5b252c36e57f982f57?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Joanna Taylor</a>
+					</div>
+		<h4>
+			<a href="">
+				Vote for best photo editor mobile app
+			</a>
+		</h4>
+					
+		
+					<div class="btSinglePostBottomData">
+									<span class='btArticleComments'>0</span>
+													<span class="btArticleReadingTime">1<span>min</span></span>
+													<span class="btArticleViewsCount">1942</span>
+													
+							</div>
+		
+	</div>
+</div>
+<div class="btClear btSeparator topMediumSpaced noBorder" ><hr></div>
+</div>  {% endcomment %}
+</div></div></div>
+</section>
+
+
+		
+
+{% endblock content %}
