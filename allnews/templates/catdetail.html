@@ -64,15 +64,15 @@
 									<span class="bt_mega_menu_title"><a href=" {% url 'home' %} ">Home</a></span> 
 								</li>
 											
-								<li id="menu-item-3830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3830"><a href="">News</a>
+								<li id="menu-item-3830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3830"><a href="{% url 'home' %}">News</a>
 						
-									<ul id="menu-categories-top-menu" class="menu">
+									<!-- <ul id="menu-categories-top-menu" class="menu">
 										{% for a in cat %}
 										<li id="menu-item-3913" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3913">
 											<a href="{% url 'catdetail' %}?id={{a.id}}">{{a.category_name}}</a>
 										</li>
 										{% endfor %}
-									</ul>
+									</ul> -->
 										{% comment %}
 										<li id="menu-item-3914" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3914"><a href="{% url 'entertainment' %}">Entertainment</a></li>
 										<li id="menu-item-3915" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3915"><a href="{% url 'food' %}">Food & Cuisine</a></li>
@@ -164,7 +164,7 @@
 	
 	<div class="btPostImageHolder">
 	<div class="btSinglePostBackgroundImage" style="background-image:url(/media/{{a.image}}); ">
-		<a href="{% url 'businessdetail' %}?id={{a.id}}"></a></div>
+		<a href="{% url 'catdetail' %}?id={{a.id}}"></a></div>
 							
 				<div class="btSinglePostTopMetaData">
 			<div class=""></div>

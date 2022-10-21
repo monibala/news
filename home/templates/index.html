@@ -147,10 +147,10 @@
 						<div class="btSinglePostTopData">
 							<span class="btArticleDate">{{a.date}}</span>
 								{% comment %} <a href="" class="btArticleAuthor">
-									 <img alt='' src="{% static 'images/joanna.jpeg' %}" srcset='http://1.gravatar.com/avatar/46df469fe889ce5b252c36e57f982f57?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Joanna Taylor</a> {% endcomment %}
+									 <img alt='' src="/media/{{a.writer_image}}" srcset='http://1.gravatar.com/avatar/46df469fe889ce5b252c36e57f982f57?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Joanna Taylor</a> {% endcomment %}
 						</div>
 						<h4>
-								<a href="">
+								<a href="{% url 'newsdetail' %}?id={[a.id}}">
 									{{a.title}}
 								</a>
 							</h4>
@@ -402,14 +402,15 @@
 						<div class="btPostImageHolder">
 							
 							<div class="btSinglePostImage">
-						<a href="{% url 'newsdetail' %}?id={{i.id}}"><img src="media/{{i.image}}" title="{{i.head1}}"></a>
+						<a href="{% url 'newsdetail' %}?id={{i.id}}">
+							<img src="media/{{i.image}}" title="{{i.title}}"></a>
 						</div>
 						<br>
 				<div class="btSinglePostTopMetaData">
 			<div class=""></div>
-			<span class="btArticleCategories"><a href="{% url 'food' %}" class="btArticleCategory cat-item-9">Food &amp; Cuisine</a>
-				<a href="" class="btArticleCategory cat-item-16">News &amp; Trending</a>
-				<a href="{% url 'salads' %}" class="btArticleCategory cat-item-20">Salads</a></span>
+			<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-9">{{i.News_category}}</a>
+				<a href="" class="btArticleCategory cat-item-16">{{i.News_subcategory}}</a>
+				<!-- <a href="{% url 'salads' %}" class="btArticleCategory cat-item-20">{{i.News_subcategory}}</a></span> -->
 									</div>
 	</div>
 	<div class="btSinglePostContent">
@@ -420,7 +421,7 @@
 					</div>
 		<h4>
 			<a href="{% url 'newsdetail' %}?id={{i.id}}">
-				{{i.head2}}
+				{{i.title}}
 			</a>
 		</h4>
 					
@@ -726,8 +727,8 @@
 				<div class="btSinglePostTopMetaData">
 			<div class=""></div>
 								
-			<span class="btArticleCategories"><a href="{% url 'business' %}" class="btArticleCategory cat-item-37">{{a.News_category}}</a>
-													<a href="{% url 'markets' %}" class="btArticleCategory cat-item-12">{{a.News_subcategory}}</a>
+			<span class="btArticleCategories"><a href="{% url 'catnews' %}?id={{a.News_category}}" class="btArticleCategory cat-item-37">{{a.News_category}}</a>
+													<a href="{% url 'subcat' %}?id={{a.News_subcategory}}" class="btArticleCategory cat-item-12">{{a.News_subcategory}}</a>
 													<a href="" class="btArticleCategory cat-item-26">{{a.head3}}</a>
 												</span>
 									</div>
@@ -737,10 +738,10 @@
 		<div class="btSinglePostTopData">
 							<span class="btArticleDate">{{a.date}}</span>
 										<a href="" class="btArticleAuthor"> 
-											<img alt='' src="{% static 'images/stoffel.jpeg' %}" srcset='http://1.gravatar.com/avatar/18bf5f60fe665d4856660da61ad37907?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Stoffel Jansen</a>
+											<img alt='' src="/media/{{a.writer_image}}" srcset='http://1.gravatar.com/avatar/18bf5f60fe665d4856660da61ad37907?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Stoffel Jansen</a>
 					</div>
 		<h4>
-			<a href="{% url 'businessdetail' %}?id={{a.id}}">
+			<a href="{% url 'newsdetail' %}?id={{a.id}}">
 				{{a.title}}
 			</a>
 		</h4>
@@ -1062,11 +1063,13 @@
 									<span class="btIco btIcoBigSihrefe btIcoFilledType btIconCircleShape">
 										<span  data-ico-es="&#xe9ea;" class="btIcoHolder"></span></span>
 									</div> -->
-	<div class="btCategoryTitleTxt"><h2>Tech &amp; Internet</h2></div><div class="btCatFilter">
+	<div class="btCategoryTitleTxt"><h2>Tech &amp; Internet</h2></div>
+	<div class="btCatFilter">
+		{% for a in data5 %}
 							<span class="btCatFilterItem" data-slug="hipster"><b>
-								<a href="">Blogging</a>
-							</b></span>
-							<span class="btCatFilterItem" data-slug="photography"><b>
+								<a href="">{{a.News_subcategory}}</a>
+							</b></span>{% endfor %}
+							<!-- <span class="btCatFilterItem" data-slug="photography"><b>
 								<a href="">Gaming</a>
 							</b></span>
 							<span class="btCatFilterItem" data-slug="skating"><b>
@@ -1074,7 +1077,9 @@
 							</b></span>
 							<span class="btCatFilterItem" data-slug="vlogging"><b>
 								<a href="{% url 'vlogging' %}">Vlogging</a>
-							</b></span></div></div><div class="btClear btSeparator bottomSmallSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-4 col-ms-12 btTextRight btTopVertical"  data-width="4"><div class="rowItemContent" ><a href="{% url 'tech' %}" class="btBtn btBtn btnFilledStyle btnAlternateColor btnSmall btnNormalWidth btnRightPosition btnNoIcon" ><span class="btnInnerText">VIEW ALL</span></a>
+							</b></span>
+							 -->
+						</div></div><div class="btClear btSeparator bottomSmallSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-4 col-ms-12 btTextRight btTopVertical"  data-width="4"><div class="rowItemContent" ><a href="{% url 'tech' %}" class="btBtn btBtn btnFilledStyle btnAlternateColor btnSmall btnNormalWidth btnRightPosition btnNoIcon" ><span class="btnInnerText">VIEW ALL</span></a>
 								{% for a in data5 %} {% if forloop.counter < 4 %}
 								
 								
@@ -1090,9 +1095,10 @@
 							
 				<div class="btSinglePostTopMetaData">
 			<div class=""></div>
-												<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-37">{{a.News_category}}</a>
-													<a href="" class="btArticleCategory cat-item-12">{{a.News_subcategory}}</a>
-													<a href="" class="btArticleCategory cat-item-26">{{a.head3}}</a>
+			<span class="btArticleCategories">
+				<a href="" class="btArticleCategory cat-item-37">{{a.News_category}}</a>
+				<a href="" class="btArticleCategory cat-item-12">{{a.News_subcategory}}</a>
+				<!-- <a href="" class="btArticleCategory cat-item-26">{{a.head3}}</a> -->
 												</span>
 									</div>
 		</div>
@@ -1104,7 +1110,7 @@
 											<img alt='' src="{% static 'images/stoffel.jpeg' %}" srcset='http://1.gravatar.com/avatar/18bf5f60fe665d4856660da61ad37907?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Stoffel Jansen</a>
 					</div>
 		<h4>
-			<a href="{% url 'techdetail' %}?id={{a.id}}">
+			<a href="{% url 'newsdetail' %}?id={{a.id}}">
 				{{a.title}}
 			</a>
 		</h4>
@@ -1264,7 +1270,7 @@
 											<img alt='' src="{% static 'images/stoffel.jpeg' %}" srcset='http://1.gravatar.com/avatar/18bf5f60fe665d4856660da61ad37907?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Stoffel Jansen</a>
 					</div>
 		<h4>
-			<a href="{% url 'sportdetail' %}?id={{a.id}}">
+			<a href="{% url 'newsdetail' %}?id={{a.id}}">
 				{{a.title}}
 			</a>
 		</h4>
@@ -2227,7 +2233,7 @@
 										<a href="" class="btArticleAuthor"> <img alt='' src="{% static 'images/stoffel.jpeg' %}" srcset='http://1.gravatar.com/avatar/18bf5f60fe665d4856660da61ad37907?s=288&#038;d=mm&#038;r=g 2x' class='avatar avatar-144 photo' height='144' width='144' loading='lahrefy'/>Stoffel Jansen</a>
 					</div>
 		<h4>
-			<a href="">
+			<a href="{% url 'newsdetail' %}?id={{a.id}}">
 				{{a.title}}
 			</a>
 		</h4>
@@ -2632,7 +2638,7 @@
 		</div>
 		
 		<h4>
-			<a href="">
+			<a href="{% url 'newsdetail' %}?id={{a.id}}">
 				{{a.title}}
 			</a>
 		</h4>
