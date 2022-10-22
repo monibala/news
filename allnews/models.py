@@ -1,4 +1,4 @@
-from tkinter import CASCADE
+
 from django.db import models
 from traitlets import default
 from category.models import category, subcategory
