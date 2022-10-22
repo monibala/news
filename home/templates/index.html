@@ -408,8 +408,8 @@
 						<br>
 				<div class="btSinglePostTopMetaData">
 			<div class=""></div>
-			<span class="btArticleCategories"><a href="" class="btArticleCategory cat-item-9">{{i.News_category}}</a>
-				<a href="" class="btArticleCategory cat-item-16">{{i.News_subcategory}}</a>
+			<span class="btArticleCategories"><a href="{% url 'catnews' %}?id={{i.News_category}}" class="btArticleCategory cat-item-9">{{i.News_category}}</a>
+				<a href="{% url 'subcat' %}?id={{i.News_subcategory}}" class="btArticleCategory cat-item-16">{{i.News_subcategory}}</a>
 				<!-- <a href="{% url 'salads' %}" class="btArticleCategory cat-item-20">{{i.News_subcategory}}</a></span> -->
 									</div>
 	</div>

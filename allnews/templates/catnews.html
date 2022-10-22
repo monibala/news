@@ -109,7 +109,7 @@
    
     <section class="boldSection bottomSemiSpaced btPageHeadline gutter  topSemiSpaced "data-parallax="0" data-parallax-offset="-250">
         <div class="port">
-            
+            {% for a in data %}	
             <header class="header btClear extralarge">
                 <div class="btSuperTitle">
                     <span>
@@ -119,10 +119,10 @@
                                 <ul>
                                     <span class="btArticleCategories">
                                         <a href="{% url 'catdetail' %}?id={{a.id}}" class="btArticleCategory cat-item-6">
-                                            {{cat_data.category_name}}
+                                            {{a.News_category}}
                                         </a>
         <a href="{% url 'subcat' %}?id={{a.id}}" class="btArticleCategory cat-item-14">
-            {{sub_cat.subcategory_name}}
+            {{a.News_subcategory}}
         </a>
     </span>
     </ul>
@@ -133,7 +133,7 @@
 
 <div class="dash">
     <h3>
-        <span class="headline"> {{data.title}}</span>
+        <span class="headline"> {{a.title}}</span>
     </h3>
 </div>
 </header>
@@ -155,7 +155,7 @@
         </div>
     </section>
 </div>		
-{% for a in data %}		
+	
 <div class="btContentHolder">
         
         <div class="btContent">
@@ -202,7 +202,15 @@
                             <div class="btPostImageHolder">
                                 <div class="btSinglePostTopMetaData">
                                     <div class="btSinglePostFormat"></div>
-                                    <span class="btArticleCategories"><a href="http://bold-news.bold-themes.com/main-demo/category/business/" class="btArticleCategory cat-item-6">Business</a><a href="http://bold-news.bold-themes.com/main-demo/category/business/markets/" class="btArticleCategory cat-item-14">Markets</a></span>									</div>
+                                    <span class="btArticleCategories">
+                                        <a href="{% url 'catnews' %}?id={{a.News_category}}" class="btArticleCategory cat-item-6">
+                                            {{a.News_category}}</a>
+                                            
+                                            <a href="{% url 'subcat' %}id={{a.Nes_subcategory}}" class="btArticleCategory cat-item-14">
+                                        {{a.News_subcategory}}
+                                    </a>
+                                </span>									
+                            </div>
                             </div>
                             <div class="btSinglePostContent">
                                 <h4>
@@ -269,9 +277,14 @@
             </div><!-- /port -->
       
         </section>
+        
+        </div>
+        </div>
+        
         {% endfor %}
-        </div>
-        </div>
+    </div>
+</div>
+
         </div>
         
 {% endblock %}
