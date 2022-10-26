@@ -14,9 +14,12 @@ class category(models.Model):
         return self.category_name
 
 class subcategory(models.Model):
-    subcategory_name = models.CharField(max_length=50)
-    category_name = models.ForeignKey(category, on_delete=models.CASCADE,null=True)
-    slug = models.SlugField(max_length=255, default=1)
+    subcategory_name = models.CharField(max_length=50,null=True)
+    category_name = models.ForeignKey(category, on_delete=models.CASCADE,null=True,related_name='category')
     def __str__(self):
         return self.subcategory_name
-
+# class Addsubcategory(models.Model):
+#     subcategory_name = models.CharField(max_length=50,null=True)
+#     # category_name = models.ForeignKey(category, on_delete=models.CASCADE,null=True,related_name='cat_name')
+#     def __str__(self):
+#         return self.subcategory_name

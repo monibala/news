@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% block content %}
+{% load static %}
 <!-- Header -->
-<body class="page-template-default page page-id-2347 page-child parent-pageid-3667 theme-bold-news bt_bb_plugin_active bt_bb_fe_preview_toggle woocommerce-no-js bodyPreloader btMenuLeftEnabled btMenuBelowLogo btStickyEnabled  btNoDashInSidebar btTopToolsInMenuArea btRemovePreloader btSoftRoundedButtons btNoSidebar" data-autoplay="0"  style="background-color:white  !important;"  >
-	
+<body class="page-template-default page page-id-2347 page-child parent-pageid-3667 theme-bold-news bt_bb_plugin_active bt_bb_fe_preview_toggle woocommerce-no-js bodyPreloader btMenuLeftEnabled btMenuBelowLogo btStickyEnabled btLightSkin btNoDashInSidebar btTopToolsInMenuArea btRemovePreloader btSoftRoundedButtons btNoSidebar" data-autoplay="0" >
 
 
 	<div class="btPageWrap" id="top">
@@ -64,7 +64,7 @@
 									<span class="bt_mega_menu_title"><a href=" {% url 'home' %} ">Home</a></span> 
 								</li>
 											
-								<li id="menu-item-3830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3830"><a href="">News</a>
+								<li id="menu-item-3830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3830"><a href="{% url 'home' %}">News</a>
 						
 									<ul id="menu-categories-top-menu" class="menu">
 										{% for a in cat %}
@@ -104,6 +104,10 @@
 			</div><!-- /port -->
 		</header><!-- /.mainHeader -->	
 		<!-- Ends header -->
+
+
+
+
 		<div class="btContentWrap btClear">
 						<div class="btContentHolder">
 			
@@ -1067,18 +1071,18 @@
 	<div class="btCatFilter">
 		{% for a in data5 %}
 							<span class="btCatFilterItem" data-slug="hipster"><b>
-								<a href="">{{a.News_subcategory}}</a>
+								<a href="{% url 'subcat' %}id={{a.News_subcategory}}">{{a.News_subcategory}}</a>
 							</b></span>{% endfor %}
-							<!-- <span class="btCatFilterItem" data-slug="photography"><b>
-								<a href="">Gaming</a>
+							<span class="btCatFilterItem" data-slug="photography"><b>
+								<a href="">{{a.News_subcategory}}</a>
 							</b></span>
 							<span class="btCatFilterItem" data-slug="skating"><b>
-								<a href="">Mobile</a>
+								<a href="">{{a.News_subcategory}}</a>
 							</b></span>
 							<span class="btCatFilterItem" data-slug="vlogging"><b>
-								<a href="{% url 'vlogging' %}">Vlogging</a>
+								<a href="{% url 'vlogging' %}">{{a.News_subcategory}}</a>
 							</b></span>
-							 -->
+							
 						</div></div><div class="btClear btSeparator bottomSmallSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-4 col-ms-12 btTextRight btTopVertical"  data-width="4"><div class="rowItemContent" ><a href="{% url 'tech' %}" class="btBtn btBtn btnFilledStyle btnAlternateColor btnSmall btnNormalWidth btnRightPosition btnNoIcon" ><span class="btnInnerText">VIEW ALL</span></a>
 								{% for a in data5 %} {% if forloop.counter < 4 %}
 								
@@ -1096,7 +1100,7 @@
 				<div class="btSinglePostTopMetaData">
 			<div class=""></div>
 			<span class="btArticleCategories">
-				<a href="" class="btArticleCategory cat-item-37">{{a.News_category}}</a>
+				<a href="{% url 'subcat' %}?id={{a.News_subcategory}}" class="btArticleCategory cat-item-37">{{a.News_category}}</a>
 				<a href="" class="btArticleCategory cat-item-12">{{a.News_subcategory}}</a>
 				<!-- <a href="" class="btArticleCategory cat-item-26">{{a.head3}}</a> -->
 												</span>
