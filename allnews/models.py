@@ -8,7 +8,7 @@ class news(models.Model):
     News_category = models.ForeignKey(category , on_delete=models.CASCADE , null=True)
     News_subcategory = models.ForeignKey(subcategory, on_delete=models.CASCADE, null=True)
     image = models.ImageField(null=True)
-    date = models.DateTimeField(blank=True,null=True)
+    date = models.DateField(null=True)
     writer_name = models.CharField(max_length=100)
     writer_image= models.ImageField()
     about_writer = models.TextField(null=True,blank=True)

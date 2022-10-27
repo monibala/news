@@ -702,11 +702,15 @@
 									<span class="btIco btIcoBigSihrefe btIcoFilledType btIconCircleShape">
 										<span  data-ico-es="&#xe9ea;" class="btIcoHolder"></span></span>
 									</div> -->
-	<div class="btCategoryTitleTxt"><h2>Business</h2></div><div class="btCatFilter">
+									{% for a in data2 %}{% if forloop.counter < 2 %}
+	<div class="btCategoryTitleTxt"><h2>{{a.News_category}}</h2></div>{% endif %}{% endfor %}
+	{% for a in data2 %}
+	<div class="btCatFilter">
 							<span class="btCatFilterItem" data-slug="hipster"><b>
-								<a href="{% url 'asia' %}">Asia</a>
-							</b></span>
-							<span class="btCatFilterItem" data-slug="photography"><b>
+								
+								<a href="{% url 'subcat' %}?id={{a.News_subcategory}}">{{a.News_subcategory}}</a>
+							</b></span>							
+							<!-- <span class="btCatFilterItem" data-slug="photography"><b>
 								<a href="{% url 'hipster' %}">Europe</a>
 							</b></span>
 							<span class="btCatFilterItem" data-slug="skating"><b>
@@ -714,7 +718,10 @@
 							</b></span>
 							<span class="btCatFilterItem" data-slug="asia"><b>
 								<a href="{% url 'asia' %}">USA</a>
-							</b></span></div></div><div class="btClear btSeparator bottomSmallSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-4 col-ms-12 btTextRight btTopVertical"  data-width="4"><div class="rowItemContent" ><a href="{% url 'business' %}" class="btBtn btBtn btnFilledStyle btnAlternateColor btnSmall btnNormalWidth btnRightPosition btnNoIcon" ><span class="btnInnerText">VIEW ALL</span></a>
+							</b></span> -->
+						</div>{% endfor %}
+
+						</div><div class="btClear btSeparator bottomSmallSpaced noBorder" ><hr></div></div></div><div class="rowItem col-md-4 col-ms-12 btTextRight btTopVertical"  data-width="4"><div class="rowItemContent" ><a href="{% url 'business' %}" class="btBtn btBtn btnFilledStyle btnAlternateColor btnSmall btnNormalWidth btnRightPosition btnNoIcon" ><span class="btnInnerText">VIEW ALL</span></a>
 								{% for a in data2 %} {% if forloop.counter < 4 %}
 								
 								
@@ -1067,11 +1074,12 @@
 									<span class="btIco btIcoBigSihrefe btIcoFilledType btIconCircleShape">
 										<span  data-ico-es="&#xe9ea;" class="btIcoHolder"></span></span>
 									</div> -->
-	<div class="btCategoryTitleTxt"><h2>Tech &amp; Internet</h2></div>
+									{% for a in data5 %}{% if forloop.counter < 2 %}
+	<div class="btCategoryTitleTxt"><h2>{{a.News_category}}</h2></div>{% endif %}{% endfor %}
 	<div class="btCatFilter">
 		{% for a in data5 %}
 							<span class="btCatFilterItem" data-slug="hipster"><b>
-								<a href="{% url 'subcat' %}id={{a.News_subcategory}}">{{a.News_subcategory}}</a>
+								<a href="{% url 'subcat' %}?id={{a.News_subcategory}}">{{a.News_subcategory}}</a>
 							</b></span>{% endfor %}
 							<span class="btCatFilterItem" data-slug="photography"><b>
 								<a href="">{{a.News_subcategory}}</a>

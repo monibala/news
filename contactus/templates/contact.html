@@ -76,10 +76,13 @@
 						<nav>
 							<ul id="menu-primary-menu" class="menu">
 								<li id="menu-item-3950" class="btMenuWideDropdown bt_mega_menu menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-3950">
-									<span class="bt_mega_menu_title"><a href=" {% url 'home' %} ">Home</a></span> 
+									<span class="bt_mega_menu_title">
+										<a href=" {% url 'home' %} ">Home</a>
+									</span> 
 								</li>
 											
-								<li id="menu-item-3830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3830"><a href="{% url 'home' %}">News</a>
+								<li id="menu-item-3830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3830">
+									<a href="{% url 'home' %}">News</a>
 						
 									<!-- <ul id="menu-categories-top-menu" class="menu">
 										{% for a in cat %}
@@ -121,7 +124,25 @@
 		<!-- Ends header -->
 
 		<div class="btContentWrap btClear">
-		<section class="boldSection bottomSemiSpaced btPageHeadline gutter  topSemiSpaced wBackground cover btParallax btDarkSkin btBackgroundOverlay btSolidDarkBackground " style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2016/08/bg-contact-01.jpg)" data-parallax="0.8" data-parallax-offset="-250"><div class="port"><header class="header btClear extralarge"><div class="btSuperTitle"><span><div class="btBreadCrumbs"><nav><ul><li><a href="http://bold-news.bold-themes.com/main-demo/">Home</a></li><li><a href="http://bold-news.bold-themes.com/main-demo/about-us/">About us</a></li></ul></nav></div></span></div><div class="dash"><h1><span class="headline">  Contact<div class='headline_feat_image_caption'></div></span></h1></div><div class="btSubTitle">Distinctively re-engineer revolutionary meta-services and premium architectures. Intrinsically incubate intuitive opportunities and real-time potentialities. Appropriately communicate one-to-one technology after plug-and-play networks.</div></header></div></section>
+		<section class="boldSection bottomSemiSpaced btPageHeadline gutter  topSemiSpaced wBackground cover btParallax btDarkSkin btBackgroundOverlay btSolidDarkBackground " style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2016/08/bg-contact-01.jpg)" data-parallax="0.8" data-parallax-offset="-250"><div class="port"><header class="header btClear extralarge"><div class="btSuperTitle"><span><div class="btBreadCrumbs"><nav>
+			<ul>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'about' %}">About us</a></li>
+			</ul>
+		
+		</nav>
+	</div>
+</span></div>
+<div class="dash">
+	<h1>
+		<span class="headline">
+			  Contact
+			  <div class='headline_feat_image_caption'>
+
+			  </div></span></h1>
+			</div>
+			<div class="btSubTitle">
+				Distinctively re-engineer revolutionary meta-services and premium architectures. Intrinsically incubate intuitive opportunities and real-time potentialities. Appropriately communicate one-to-one technology after plug-and-play networks.</div></header></div></section>
 		</div>
 			
 	<section>

@@ -45,7 +45,7 @@ def sport(request):
     return render(request,"sport.html",context)   
 
 def tech(request):
-    data = news.objects.filter(News_category__category_name='Tech & internet')
+    data = news.objects.filter(News_category__category_name='Tech')
     data1 = news_second.objects.all()
     context = {'data':data, 'data1':data1}
     return render(request,"tech.html",context) 
