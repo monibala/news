@@ -58,7 +58,7 @@ def travel(request):
     return render(request,"travel.html",context)   
 
 def urban(request):
-    data = news.objects.filter(News_category__category_name='Urban')
+    data = news.objects.filter(News_category__category_name='urban')
     data1 = news_second.objects.all()
     context = {'data':data, 'data1':data1}
     return render(request,"urban.html",context)                               

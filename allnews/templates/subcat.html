@@ -115,7 +115,7 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="http://bold-news.bold-themes.com/main-demo/">Home</a>
+                                    <a href="{% url 'home' %}">Home</a>
                                 </li>
                             </ul>
                         </nav>
@@ -153,18 +153,18 @@
                         <div class="btSinglePostTemplate smallTemplate image backgroundImagePosition">
                             <div class="btPostImageHolder">
                                 <div class="btSinglePostBackgroundImage" style="background-image:url(http://bold-news.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/03/business-4stock-1-640x427.jpg); ">
-                                    <a href="http://bold-news.bold-themes.com/main-demo/2017/03/08/stocks-basics-how-stocks-trade/" title="Stocks basics: how stocks trade" target="_blank"></a>
+                                    <a href="" title="Stocks basics: how stocks trade" target="_blank"></a>
                                 </div>
                                 <div class="btSinglePostTopMetaData">
                                     <div class="btSinglePostFormat"></div>
                                     <span class="btArticleCategories">
-                                        <a href="http://bold-news.bold-themes.com/main-demo/category/business/" class="btArticleCategory cat-item-6">
+                                        <a href="{% url 'catnews' %}?id={{a.News_category}}" class="btArticleCategory cat-item-6">
                                             {{a.News_category}}</a>
-                                <a href="http://bold-news.bold-themes.com/main-demo/category/business/stock/" class="btArticleCategory cat-item-23">{{a.News_subcategory}}</a></span>									</div>
+                                <a href="{% url 'subcat' %}?id={{a.News_subcategory}}" class="btArticleCategory cat-item-23">{{a.News_subcategory}}</a></span>									</div>
                             </div>
                             <div class="btSinglePostContent">
                                 <h4>
-                                    <a href="http://bold-news.bold-themes.com/main-demo/2017/03/08/stocks-basics-how-stocks-trade/" title="Stocks basics: how stocks trade" target="_blank">{{a.title}}</a>
+                                    <a href="" title="Stocks basics: how stocks trade" target="_blank">{{a.title}}</a>
                                 </h4>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                                 <div class="btSinglePostTopMetaData">
                                     <div class="btSinglePostFormat"></div>
                                     <span class="btArticleCategories">
-                                        <a href="http://bold-news.bold-themes.com/main-demo/category/business/" class="btArticleCategory cat-item-6">Business</a><a href="http://bold-news.bold-themes.com/main-demo/category/business/markets/" class="btArticleCategory cat-item-14">Markets</a></span>									</div>
+                                        <a href="" class="btArticleCategory cat-item-6">Business</a><a href="http://bold-news.bold-themes.com/main-demo/category/business/markets/" class="btArticleCategory cat-item-14">Markets</a></span>									</div>
                             </div>
                             <div class="btSinglePostContent">
                                 <h4>
