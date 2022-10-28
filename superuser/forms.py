@@ -49,3 +49,13 @@ class adminform(forms.ModelForm):
 	class Meta:
 		model = User
 		fields = ('old_password','new_password')
+class loginform(forms.Form):
+    username = forms.CharField(max_length=30,widget=forms.TextInput(attrs={'placeholder':'Enter the email'}))
+    password = forms.CharField(widget=forms.PasswordInput(render_value=False, attrs={'placeholder': 'password'}),max_length=30)
+    
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        if User.objects.filter(email=username).exists() is False:
+            raise forms.ValidationError("this mail is not registered")
+        else:
+            return username

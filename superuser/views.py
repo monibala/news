@@ -16,7 +16,7 @@ from django.contrib import messages
 from django.http.response import HttpResponse,JsonResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages as sms
-from superuser.forms import GenForm, adminform
+from superuser.forms import GenForm, adminform, loginform
 from .custumfunction import getobjecturl
 from superuser.templatetags.custumfilter import sidebardata
 from .dashboardsettings import hiddenFieldInAdminAllModel,appmodels , appslist , getObjectbyAppModelName , getmodelbyappname
@@ -194,20 +194,41 @@ def Logout(request):
     else:
         return redirect('logindashboard')
 def logindashboard(request):
-    if request.user.is_authenticated and request.user.is_superuser:
-        return render(request, 'superuser/index.html')
-    else:
+    # if request.user.is_authenticated and request.user.is_superuser:
+    #     return render(request, 'superuser/index.html')
+    # else:
         
-        if request.method=="POST":
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            USER = authenticate(request,username=username, password=password)
-            if  USER is not None:
-                login(request, USER)
+    #     if request.method=="POST":
+    #         username = request.POST.get('username')
+    #         password = request.POST.get('password')
+    #         USER = authenticate(request,username=username, password=password)
+    #         if  USER is not None:
+    #             login(request, USER)
             
-            return render(request, 'superuser/index.html')
+    #         return render(request, 'superuser/index.html')
 
-     
+    if request.user.is_authenticated:
+        return redirect('index')
+    if request.method=='POST':
+        form = loginform(request.POST)
+        if form.is_valid():
+            username = User.objects.get(email=form.cleaned_data['username']).username
+            password = form.cleaned_data['password']
+            user = authenticate(username=username,password=password)
+            if user is not None:
+                login(request,user)
+                return JsonResponse({'status':'ok','msg':'Login Success'})
+                # messages.success(request,'Logged in successfully')
+                # return redirect(request.path)
+            else:
+                return JsonResponse({"status":'invaliduser','msg':'invalid user'})
+                # return render(request,'signin.html',{'form':form})
+        else:
+            return render(request,'superuser/index.html',{'form':form})
+
+    form = loginform()
+    return render(request,'superuser/index.html',{'form':form})
+
         
     
     
