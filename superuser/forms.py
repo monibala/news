@@ -41,3 +41,11 @@ def GenForm(Model,listHiddenfield=[]):
                         pass 
                            
     return newform  
+class adminform(forms.ModelForm):
+	old_password = forms.CharField(label=("old_password"), required=True,
+                                    widget=forms.PasswordInput)
+	new_password = forms.CharField(label=("new_password"), required=True,
+                                    widget=forms.PasswordInput)
+	class Meta:
+		model = User
+		fields = ('old_password','new_password')

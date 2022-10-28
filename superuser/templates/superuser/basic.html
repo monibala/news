@@ -163,9 +163,9 @@
                                     class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 {% comment %} <a class="dropdown-item" href=" {% static '/admin-home/profile-update' %} ">Edit
-                                    Profile</a>
-                                <a class="dropdown-item" href=" {% static '/admin-home/password-change' %} ">Password
-                                    Change</a> {% endcomment %}
+                                    Profile</a>{% endcomment %}
+                                <a class="dropdown-item" href=" {% url 'changepwd' %}">
+                                    Change Password</a> 
                                 <a class="dropdown-item" href=" {% url 'dashboardlogout' %} ">Logout</a>
                             </div>
                         </div>

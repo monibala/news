@@ -1,5 +1,14 @@
-from django.shortcuts import render
 
+from django.utils.encoding import force_bytes
+from django.utils.http  import urlsafe_base64_decode, urlsafe_base64_encode
+from django.contrib.auth.tokens import default_token_generator
+from django.shortcuts import render
+from django.template.loader import render_to_string
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.core.mail import send_mail
+from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import make_password
 # Create your views here.
 # from django.http import request
 # from django.http.response import HttpResponse
@@ -7,7 +16,7 @@ from django.contrib import messages
 from django.http.response import HttpResponse,JsonResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages as sms
-from superuser.forms import GenForm
+from superuser.forms import GenForm, adminform
 from .custumfunction import getobjecturl
 from superuser.templatetags.custumfilter import sidebardata
 from .dashboardsettings import hiddenFieldInAdminAllModel,appmodels , appslist , getObjectbyAppModelName , getmodelbyappname
@@ -203,10 +212,77 @@ def logindashboard(request):
     
     
     return render(request, 'superuser/logindashboard.html')
+# Forgot Pwd 
+def forgotpwd(request):
+    # if request.user.is_authenticated!=True:
         
+        if request.method=='POST':
+            # try:
+                email=request.POST['email']
+                useremail=User.objects.get(email=email)
+                ftoken = default_token_generator.make_token(useremail)
+                emails=useremail.email   
+                mail_msg=f'Your reset password link is http://127.0.0.1:8000/dashboard/pwdchange/{ftoken}.'
+                
+                send_mail('For reset password', mail_msg,settings.EMAIL_HOST_USER, [emails],fail_silently=False)
+                sms.success(request, "Mail Send Successfully.\n Please Check Your Email.")
+                return redirect('forgotpwd')
+            # except Exception as e:
+            #     sms.error(request,'Invalid Email!')
+        return render(request,'superuser/forgotpwd.html')
+
+def pwd_reset_change(request,id):
+    if request.user.is_authenticated!=True:
+        if request.method=='POST':
+            try:
+                pass1=request.POST['pass1']
+                confirm=request.POST['pass2']
+                if pass1==confirm:
+                    frgpwd=User.objects.get(Password=id)
+                    user=User.objects.get(username=frgpwd)
+                    user.set_password(pass1)
+                    user.save()
+                    sms.success(request, "Password Change Successfully.\n +Please login. ")
+                    return redirect('logindashboard')
+                else:
+                    sms.error(request,'Password Not Match.Enter Same Password.')
+            except Exception as e:
+                print(e)
+        return render(request,'superuser/pwdchange.html')
+    else:
+        return redirect('error')
+
+def changepwd(request):
+    user = authenticate(username='username',password='passwd')
+    try:
+        if user is not None:
+            user.set_password('new password')
+        else:
+            print('user is not exist')
+    except:
+        print("do something here")
+    return render(request, 'superuser/changepwd.html')
+    # if request.method == 'POST':
+    #     user_id = User.objects.get(id=id)
+    #     # id = request.POST.get('user')
+    #     old_password = request.POST['oldpassword']
+    #     new_password = request.POST['newpassword']
         
-
-
+    #     print(user_id)
+    #     password = make_password(new_password, salt=None, hasher='default')
+    #     user_id.password=password
+            
+    #     print(user_id.password)
+    #     messages.success(request, 'Password Changed Successfully')
+    #     # user_id.save()
+            
+    # else:
+    #     messages.error(request, 'Please correct the error below.')
+        
+    #     return render(request, 'superuser/changepwd.html')
+    # return render(request, 'superuser/changepwd.html')
+    # else:
+    #     return render(request, 'superuser/changepwd.html')
 
 
 
